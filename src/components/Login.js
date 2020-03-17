@@ -22,7 +22,6 @@ function Login() {
                 type="email"
                 name="email"
                 placeholder="Email"
-                required
               />
             </div>
             <div className="flex row">
@@ -31,11 +30,10 @@ function Login() {
                 type="password"
                 name="password"
                 placeholder="password"
-                required
               />
             </div>
             <div>
-              <button className="btn" type="submit" disabled="!isValid">
+              <button className="btn" type="submit" disabled={!isValid}>
                 Login
               </button>
             </div>
