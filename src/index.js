@@ -3,9 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { Router, navigate } from "@reach/router";
+import { Router } from "@reach/router";
 import AskHelp from "./components/AskHelp";
 import SearchHelp from "./components/SearchHelp";
+import Login from "./components/Login";
 
 function FinalApp() {
   return (
@@ -13,6 +14,7 @@ function FinalApp() {
       <App path="/" />
       <AskHelp path="ask" />
       <SearchHelp path="search" />
+      <Login path="login" />
     </Router>
   );
 }
