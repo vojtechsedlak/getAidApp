@@ -1,12 +1,17 @@
 import React from "react";
+import { Formik } from "formik";
+import { SendMsgSchema } from "../_helper/validationSchema";
 
 const Details = () => {
+  const onFormSubmit = values => {
+    console.log(values);
+  };
   return (
     <div className="bgTheme">
       <div className="searchContainer p10">
         <div className="card bg-white">
           <div className="bold f24">Name</div>
-          <div>
+          <div className="mt20">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
@@ -29,6 +34,31 @@ const Details = () => {
           </div>
         </div>
         <button className="offerButton">Offer Help</button>
+        <Formik
+          initialValues={{ message: "" }}
+          validationSchema={SendMsgSchema}
+          isInitialValid={false}
+          onSubmit={onFormSubmit}
+          render={({ handleChange, isValid, handleSubmit }) => (
+            <form onSubmit={handleSubmit}>
+              <div>
+                <div className="f24 tc-white">
+                  Compose a message which will be sent to the person:
+                </div>
+                <textarea
+                  onChange={handleChange}
+                  rows="4"
+                  cols="50"
+                  name="message"
+                  className="w100p"
+                ></textarea>
+                <button className="offerButton" disabled={!isValid}>
+                  Send Mail
+                </button>
+              </div>
+            </form>
+          )}
+        />
       </div>
     </div>
   );

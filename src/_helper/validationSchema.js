@@ -30,4 +30,8 @@ const SearchSchema = Yup.object({
   searchInput: Yup.string()
 });
 
-export { loginSchema, SignUpSchema, SearchSchema, askSchema };
+const SendMsgSchema = Yup.object({
+  message: Yup.string()
+});
+
+export { loginSchema, SignUpSchema, SearchSchema, askSchema, SendMsgSchema };
