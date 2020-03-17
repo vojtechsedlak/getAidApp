@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik } from 'formik'
 import { askSchema } from '../_helper/validationSchema'
-import { countriesList } from '../_helper/countries'
+import { countriesList, categoriesList } from '../_helper/listItems'
 import Logo from '../sou.svg'
 import { navigate } from '@reach/router'
 
@@ -37,15 +37,13 @@ const AskHelp = () => {
         }}
         onClick={() => navigate('/')}
       />
-      <div style={{ color: 'white', fontSize: '24px', margin: '30px 0' }}>
-        Enter details about the help that you need
-      </div>
       <Formik
         initialValues={{
           name: '',
           city: '',
           country: 'Afghanistan',
-          content: ''
+          content: '',
+          category: 'Financial Help'
         }}
         validationSchema={askSchema}
         isInitialValid={false}
@@ -59,29 +57,42 @@ const AskHelp = () => {
           values
         }) => (
           <form onSubmit={handleSubmit}>
-            <div className='center '>
+            <div className='center card '>
+              <div
+                style={{ color: 'white', fontSize: '24px', margin: '30px 0' }}
+              >
+                Enter details about the help that you need
+              </div>
               <div className='row flex'>
                 <input
-                  className='w600'
+                  className='Input'
                   type='text'
                   name='name'
                   onChange={handleChange}
-                  placeholder='Name'
+                  placeholder='Title'
                   required
+                  style={{ width: '600px' }}
                 />
               </div>
               <div className='flex row'>
                 <input
-                  className='w600'
+                  className='Input'
                   type='text'
                   name='city'
                   onChange={handleChange}
                   placeholder='City'
                   required
+                  style={{ width: '600px' }}
                 />
               </div>
               <div className='flex row'>
-                <select id='country' name='country' onChange={handleChange}>
+                <select
+                  id='country'
+                  name='country'
+                  className='Input'
+                  style={{ width: '600px' }}
+                  onChange={handleChange}
+                >
                   {countriesList.map(country => {
                     return (
                       <option value={country.label}>{country.label}</option>
@@ -90,18 +101,39 @@ const AskHelp = () => {
                 </select>
               </div>
               <div className='flex row'>
+                <select
+                  id='category'
+                  name='category'
+                  className='Input'
+                  style={{ width: '600px' }}
+                  onChange={handleChange}
+                >
+                  {categoriesList.map(category => {
+                    return (
+                      <option value={category.label}>{category.label}</option>
+                    )
+                  })}
+                </select>
+              </div>
+              <div className='flex row'>
                 <textarea
                   onChange={handleChange}
-                  className='w600'
-                  placeholder='Enter your content'
+                  className='Input'
+                  placeholder='Describe your need'
                   name='content'
                   required
                   wrap
                   rows={5}
+                  style={{ width: '600px' }}
                 />
               </div>
               <div>
-                <button className='btn' type='submit' disabled={!isValid}>
+                <button
+                  className='btn'
+                  type='submit'
+                  disabled={!isValid}
+                  style={{ padding: '10px', borderRadius: '4px' }}
+                >
                   Save
                 </button>
               </div>
