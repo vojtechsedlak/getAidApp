@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchResultCard = () => {
   return (
-    <div className="card bg-white m10">
+    <div className="card bg-white m10 pointer">
       <div className="bold f24">Name</div>
       <div className="block-ellipsis">
         Lorem Ipsum is simply dummy text of the printing and typesetting

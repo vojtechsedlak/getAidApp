@@ -7,7 +7,7 @@ function SignUp() {
     console.log(values);
   };
   return (
-    <header className="App-header">
+    <header className="bgTheme flex-center flex">
       <Formik
         initialValues={{ email: "", password: "", confirmPassword: "" }}
         validationSchema={SignUpSchema}
