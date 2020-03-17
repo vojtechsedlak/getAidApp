@@ -7,4 +7,11 @@ const loginSchema = Yup.object({
   password: Yup.string().required("Password Required")
 });
 
-export { loginSchema };
+const askSchema = Yup.object({
+  name: Yup.string().required("Name is required"),
+  content: Yup.string().required("Content is required"),
+  city: Yup.string().required("City is required"),
+  country: Yup.string().required("Country is required")
+});
+
+export { loginSchema, askSchema };

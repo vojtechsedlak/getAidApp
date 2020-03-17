@@ -21,6 +21,41 @@ code {
   width: 150px;
 }
 
+.w600 {
+  width: 600px;
+}
+input {
+  padding: 0 5px;
+  border-radius: 2px;
+  outline: none;
+}
+textarea {
+  min-height: 100px;
+}
+input,
+select,
+textarea {
+  margin: 10px 0;
+  height: 40px;
+  width: 600px;
+  font-size: 14px;
+}
+button {
+  width: 100px;
+  background: #f8492d;
+  height: 40px;
+  margin: 10px;
+  font-size: 16px;
+  color: white;
+  border: 0px;
+}
+button:disabled {
+  background-color: #d7d7d7;
+  color: black;
+}
+textarea {
+  resize: vertical;
+}
 .btn {
   width: 120px;
 }
