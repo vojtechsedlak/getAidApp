@@ -7,6 +7,8 @@ import { Router } from "@reach/router";
 import AskHelp from "./components/AskHelp";
 import SearchHelp from "./components/SearchHelp";
 import Login from "./components/Login";
+import SignUp from "./components/Signup";
+import Details from "./components/Details";
 
 function FinalApp() {
   return (
@@ -15,6 +17,8 @@ function FinalApp() {
       <AskHelp path="ask" />
       <SearchHelp path="search" />
       <Login path="login" />
+      <SignUp path="signup" />
+      <Details path="search/:id" />
     </Router>
   );
 }
