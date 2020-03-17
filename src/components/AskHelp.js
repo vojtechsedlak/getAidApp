@@ -1,5 +1,7 @@
 import React from "react";
 
-const AskHelp = () => {};
+const AskHelp = () => {
+  return <div>ask</div>;
+};
 
 export default AskHelp;

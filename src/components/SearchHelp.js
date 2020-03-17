@@ -1,5 +1,7 @@
 import React from "react";
 
-const SearchHelp = () => {};
+const SearchHelp = () => {
+  return <div>search</div>;
+};
 
 export default SearchHelp;
