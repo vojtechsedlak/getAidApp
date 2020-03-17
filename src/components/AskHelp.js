@@ -4,10 +4,17 @@ import { askSchema } from '../_helper/validationSchema'
 import { countriesList, categoriesList } from '../_helper/listItems'
 import Logo from '../sou.svg'
 import { navigate } from '@reach/router'
+import ReactGA from 'react-ga';
+
 
 const AskHelp = () => {
+  ReactGA.pageview(window.location.pathname + window.location.search);
   const onFormSubmit = values => {
-    console.log(values)
+    console.log(values);
+    ReactGA.event({
+      category: 'User',
+      action: 'Asked for help'
+    });
   }
   //   function onCountryChange(selectedCountry) {
   //     formik.setFieldValue("country", selectedCountry);

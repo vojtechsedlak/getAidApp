@@ -5,6 +5,10 @@ import { Router, navigate } from "@reach/router";
 import AskHelp from "./components/AskHelp";
 import SearchHelp from "./components/SearchHelp";
 import Login from "./components/Login";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-26370633-6');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
   return (

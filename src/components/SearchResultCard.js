@@ -1,6 +1,8 @@
 import React from "react";
+import ReactGA from 'react-ga';
 
 const SearchResultCard = () => {
+  ReactGA.pageview(window.location.pathname + window.location.search);
   return (
     <div className="card bg-white m10 pointer">
       <div className="bold f24">Name</div>

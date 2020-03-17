@@ -2,10 +2,16 @@ import React from "react";
 import { Formik } from "formik";
 import { SearchSchema } from "../_helper/validationSchema";
 import SearchResultCard from "./SearchResultCard";
+import ReactGA from 'react-ga';
 
 const SearchHelp = () => {
+  ReactGA.pageview(window.location.pathname + window.location.search);
   const onFormSubmit = values => {
     console.log(values);
+    ReactGA.event({
+      category: 'User',
+      action: 'Searched for help'
+    });
   };
   return (
     <>

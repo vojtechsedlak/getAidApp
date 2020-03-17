@@ -1,10 +1,16 @@
 import React from "react";
 import { Formik, Field } from "formik";
 import { SignUpSchema } from "../_helper/validationSchema";
+import ReactGA from 'react-ga';
 
 function SignUp() {
+  ReactGA.pageview(window.location.pathname + window.location.search);
   const onFormSubmit = values => {
     console.log(values);
+    ReactGA.event({
+      category: 'User',
+      action: 'Created an account'
+    });
   };
   return (
     <header className="bgTheme flex-center flex">
