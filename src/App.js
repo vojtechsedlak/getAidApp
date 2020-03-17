@@ -5,7 +5,6 @@ import AskHelp from "./components/AskHelp";
 import SearchHelp from "./components/SearchHelp";
 import Landing from "./components/Landing";
 import Login from "./components/Login";
-import Landing from "./components/Landing";
 
 function App() {
   return (
