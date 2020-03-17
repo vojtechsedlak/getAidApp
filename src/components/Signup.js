@@ -1,22 +1,22 @@
 import React from "react";
 import { Formik, Field } from "formik";
-import { loginSchema } from "../_helper/validationSchema";
+import { SignUpSchema } from "../_helper/validationSchema";
 
-function Login() {
+function SignUp() {
   const onFormSubmit = values => {
     console.log(values);
   };
   return (
     <header className="App-header">
       <Formik
-        initialValues={{ email: "", password: "" }}
-        validationSchema={loginSchema}
+        initialValues={{ email: "", password: "", confirmPassword: "" }}
+        validationSchema={SignUpSchema}
         isInitialValid={false}
         onSubmit={onFormSubmit}
         render={({ touched, handleSubmit, isValid, errors }) => (
           <form onSubmit={handleSubmit}>
             <div className="center card">
-              <div className="tc-white center">Login</div>
+              <div className="tc-white center">Signup</div>
               <div className="mt20">
                 <div className="p10">
                   <Field
@@ -36,13 +36,24 @@ function Login() {
                     name="password"
                     placeholder="password"
                   />
+                  {touched.password && errors.password && (
+                    <div className="errorMsg"> {errors.password} </div>
+                  )}
                 </div>
-                {touched.password && errors.password && (
-                  <div className="errorMsg"> {errors.password} </div>
-                )}
+                <div className="p10">
+                  <Field
+                    className="Input"
+                    type="password"
+                    name="confirmPassword"
+                    placeholder="confirmPassword"
+                  />
+                  {touched.confirmPassword && errors.confirmPassword && (
+                    <div className="errorMsg"> {errors.confirmPassword} </div>
+                  )}
+                </div>
                 <div className="p10">
                   <button className="btn p10" type="submit" disabled={!isValid}>
-                    Login
+                    Signup
                   </button>
                 </div>
               </div>
@@ -54,4 +65,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;
