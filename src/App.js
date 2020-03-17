@@ -3,6 +3,7 @@ import "./App.css";
 import { Router, navigate } from "@reach/router";
 import AskHelp from "./components/AskHelp";
 import SearchHelp from "./components/SearchHelp";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <button onClick={() => navigate("search")}>Offer Help</button>
         </div>
         <Router basepath="/">
+          <Login path="login" />
           <AskHelp path="ask" />
           <SearchHelp path="search" />
         </Router>
